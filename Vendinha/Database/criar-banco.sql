@@ -10,7 +10,7 @@ CREATE TABLE dividas (
     id SERIAL PRIMARY KEY,
     clienteid INTEGER NOT NULL REFERENCES clientes(id),
     valor NUMERIC(10, 2) NOT NULL,
-    paga BOOLEAN NOT NULL DEFAULT FALSE,
-    datacriacao TIMESTAMPTZ NOT NULL,
+    paga BOOLEAN NOT NULL DEFAULT FALSE, /*por padrao e false*/
+    datacriacao TIMESTAMPTZ NOT NULL, /*timestamp with time zone*/
     datapagamento TIMESTAMPTZ
 );

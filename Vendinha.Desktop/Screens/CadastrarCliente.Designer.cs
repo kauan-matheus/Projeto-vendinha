@@ -22,7 +22,7 @@ namespace Vendinha.Desktop.Screens
             label1 = new Label();
             txtNome = new TextBox();
             label2 = new Label();
-            txtCpf = new TextBox();
+            txtCpf = new MaskedTextBox();
             label3 = new Label();
             pickerData = new DateTimePicker();
             label4 = new Label();
@@ -74,9 +74,8 @@ namespace Vendinha.Desktop.Screens
             //
             txtCpf.Location = new Point(114, 182);
             txtCpf.Margin = new Padding(2);
-            txtCpf.MaxLength = 14;
             txtCpf.Name = "txtCpf";
-            txtCpf.PlaceholderText = "000.000.000-00";
+            txtCpf.Mask = "000\\.000\\.000-00";
             txtCpf.Size = new Size(250, 23);
             txtCpf.TabIndex = 4;
             //
@@ -131,7 +130,7 @@ namespace Vendinha.Desktop.Screens
             btnSalvar.TabIndex = 9;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
-            btnSalvar.Click += btnSalvar_Click;
+            btnSalvar.Click += btnSalvar_Click; //passo aq o link do botão e da logica
             //
             // lblErros
             //
@@ -175,7 +174,7 @@ namespace Vendinha.Desktop.Screens
         private Label label1;
         private TextBox txtNome;
         private Label label2;
-        private TextBox txtCpf;
+        private MaskedTextBox txtCpf;
         private Label label3;
         private DateTimePicker pickerData;
         private Label label4;
