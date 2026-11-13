@@ -10,21 +10,14 @@ namespace Vendinha.Models
         [StringLength(100, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 100 caracteres")]
         public string Nome { get; set; } = "";
 
-        private string cpf = "";
         [Required(ErrorMessage = "Informe o CPF")]
-        public string Cpf
-        {
-            get { return this.cpf; }
-            set
-            {
-                this.cpf = (value ?? "").Replace(".", "").Replace("-", "").Trim();
-            }
-        }
+        [RegularExpression(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$", ErrorMessage = "O CPF deve estar no formato 000.000.000-00")]
+        public string Cpf { get; set; } = "";
 
         public DateTime DataNascimento { get; set; }
 
         private string? email;
-        [EmailAddress(ErrorMessage = "E-mail inválido")]
+        [EmailAddress(ErrorMessage = "E-mail invalido")]
         public string? Email
         {
             get { return this.email; }

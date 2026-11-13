@@ -17,11 +17,6 @@ namespace Vendinha.Models
 
         public DateTime? DataPagamento { get; set; }
 
-        public string Situacao
-        {
-            get { return Paga ? "Paga" : "Em aberto"; }
-        }
-
         public void MarcarComoPaga()
         {
             Paga = true;

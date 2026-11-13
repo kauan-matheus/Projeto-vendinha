@@ -6,7 +6,7 @@ namespace Vendinha.Context
     public class VendinhaDbContext : DbContext
     {
         private const string ConnectionString =
-            "Server=localhost;Port=5432;Database=vendinha;User Id=postgres;Password=1234;";
+            "Server=localhost;Port=5432;Database=vendinha;User Id=postgres;Password=1234;"; //faço a conexão por connection string
 
         public DbSet<Cliente> Clientes => Set<Cliente>();
         public DbSet<Divida> Dividas => Set<Divida>();
@@ -39,7 +39,7 @@ namespace Vendinha.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(ConnectionString);
+            optionsBuilder.UseNpgsql(ConnectionString); //to passando como options o npgsql do postgres
 
             base.OnConfiguring(optionsBuilder);
         }
